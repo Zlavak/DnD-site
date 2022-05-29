@@ -1,0 +1,75 @@
+@font-face { 
+    font-family: 'PlayfairDisplay';
+    src: url("/assets/fonts/PlayfairDisplay-MediumItalic.ttf");
+    src: url("/assets/fonts/PlayfairDisplay-Medium.ttf");
+
+    font-family: "NotoSerif";
+    src: url(/assets/fonts/NotoSerif-Regular.ttf);
+}
+
+ 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: "PlayfairDisplay";
+
+}
+
+a{
+    text-decoration: none;
+}
+
+
+::-webkit-scrollbar {
+    width: 0;
+  }
+
+.main {
+    background: url("/assets/images/home_background.jpg") center no-repeat;
+    width: 100%;
+    min-height: 100vh;
+    position: sticky;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.background{
+    display: flex;
+    justify-content: center;
+    min-height: 300px;
+    padding-top: 100px;
+    width: 100%; 
+}
+
+.back-cont{ 
+    border-radius: 40px; 
+    background: url("/assets/images/parchment.jpg") center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    width: 60%; 
+}
+
+.about{
+    padding-left: 20px;
+    padding-top: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.races{
+    background: url("/assets/images/race_back2.jpg") center no-repeat;
+    background-color: black;
+    width: 100%;
+    min-height: 100vh;
+    position: sticky;
+    -webkit-background-size: cover;
+    background-size: cover;
+    border-top: 10px solid white;
+}
+
+.positioning{
+    padding-top: 90px;
+}
+

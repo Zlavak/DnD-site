@@ -1,0 +1,42 @@
+.card{
+    backface-visibility: hidden;
+    perspective: 600px;
+}
+
+.inner_flip{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  text-align: center;
+}
+p{
+  text-align: center;
+  color: rgb(214, 197, 197);
+}
+
+.info{
+  text-align: justify;
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+  padding-left: 20px;
+}
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+
+.back{
+    background-color: rgb(92, 69, 69);
+    background-size: cover;
+    transform: rotateY(180deg);
+
+}
+
+.card.animated:hover .inner_flip{
+    transform: rotateY(180deg);
+}
