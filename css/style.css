@@ -14,13 +14,15 @@
     padding: 0;
     scroll-behavior: smooth;
     font-family: "PlayfairDisplay";
-
 }
 
 a{
     text-decoration: none;
 }
 
+a.nav:hover{
+    cursor: url("/assets/cursors/cursor.cur"), default;
+}
 
 ::-webkit-scrollbar {
     width: 0;
@@ -33,6 +35,7 @@ a{
     position: sticky;
     -webkit-background-size: cover;
     background-size: cover;
+    cursor: url("/assets/cursors/cursor.cur"), default;
 }
 
 .background{
@@ -67,9 +70,14 @@ a{
     -webkit-background-size: cover;
     background-size: cover;
     border-top: 10px solid white;
+    cursor: url("/assets/cursors/race_cursor.cur"), default;
 }
 
 .positioning{
     padding-top: 90px;
+}
+
+img.img:hover{
+    cursor: url("/assets/cursors/pointer.cur"), default;
 }
 

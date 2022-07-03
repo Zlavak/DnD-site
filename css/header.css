@@ -10,6 +10,7 @@
     z-index: 1000;
     display: flex;
     justify-content: space-around;
+    cursor: url("/assets/cursors/cursor.cur"), default;
 }
 
 .nav_head{

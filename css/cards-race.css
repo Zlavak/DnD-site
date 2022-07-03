@@ -53,17 +53,17 @@
 .title{
   text-align: center;
   color: #000;
-  font-size: 18px;
+  font-size: 13px;
 }
 
 .content{
   font-weight: 500;
-  font-size: 16px;
+  font-size: 12px;
   text-align: center;
   color: #000;
   text-indent: 4px;
   padding-left: 2px;
-  padding-top: 5px;
+  padding-top: 2px;
 }
 
 @media screen and (min-width: 600px) {
@@ -157,17 +157,9 @@
   animation: none;
   transition: none;
 }
-.card.menu.animated {
+.card.animated {
   transition: none;
-  animation: holoCard 12s ease 0s 1;
-}
-.card.menu.animated:before {
-  transition: none;
-  animation: holoGradient 12s ease 0s 1;
-}
-.card.menu.animated:after {
-  transition: none;
-  animation: holoSparkle 12s ease 0s 1;
+  animation: holoCard 10s ease-in-out 0s 1;
 }
 
 @keyframes holoSparkle {
@@ -231,7 +223,7 @@
     transform: rotateZ(0deg) rotateX(6deg) rotateY(-20deg);
   }
   13%, 16% {
-    transform: rotateZ(0deg) rotateX(-9deg) rotateY(32deg);
+    transform: rotateZ(0deg) rotateX(-8deg) rotateY(26deg);
   }
   35%, 38% {
     transform: rotateZ(3deg) rotateX(12deg) rotateY(20deg);
@@ -240,15 +232,13 @@
     transform: rotateZ(-3deg) rotateX(-12deg) rotateY(-27deg);
   }
 }
-/* .card.human:hover {
-  box-shadow: 0 0 30px -5px white, 0 0 10px -2px white, 0 55px 35px -20px rgba(0, 0, 0, 0.5);
-}
-.card.human:hover:before, .card.human.active:before {
-  background-image: linear-gradient(115deg, transparent 20%, var(--color1) 36%, var(--color2) 43%, var(--color3) 50%, var(--color4) 57%, var(--color5) 64%, transparent 80%);
-} */
 
 .fond.bro{
   background-position: 20% 2%;
+}
+
+.cards.crutch{
+  order: 1;
 }
 
 .cards {
@@ -261,11 +251,20 @@
   position: relative;
   z-index: 1;
   transform: translate3d(0.1px, 0.1px, 0.1px);
+  width: 100%;
+  min-height: 100vh;
 }
 
 
 @media screen and (min-width: 600px) {
   .cards {
     flex-direction: row;
+ }
+ .title{
+   font-size: 18px;
+ }
+ .content{
+   font-size: 16px;
+   padding-top: 5px;
  }
 }

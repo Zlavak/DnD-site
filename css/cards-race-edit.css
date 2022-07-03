@@ -1,0 +1,184 @@
+:root {
+    --elf1: #fac;
+    --elf2: #dca;
+    --elffront: url(/assets/images/elf3.jpg);
+    --dwarf1: #54a29e;
+    --dwarf2: #a79d66;
+    --dwarffront: url(/assets/images/dwarf2.jpg);
+    --human1: #efb2fb;
+    --human2: #acc6f8;
+    --humanfront: url(/assets/images/human2.jpg);
+    --halfing1: #efb2fb;
+    --halfing2: #acc6f8;
+    --halfingfront: url(/assets/images/halfing2.png);
+    --dragonbornfront: url(/assets/images/dragonborn.jpg);
+    --tieflingfront: url(/assets/images/tiefling.jpg);
+  }
+
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 20px;
+    perspective: 2000px;
+    z-index: 1;
+    transform: translate3d(0.1px, 0.1px, 0.1px);
+    width: 100%;
+    min-height: 100vh;
+    margin-top: 84px;
+  }
+
+  .card {
+    position: relative;
+    width: 16%;
+    min-height: 500px;
+    z-index: 10;
+    touch-action: none;
+    transition: transform 0.5s ease, box-shadow 0.2s ease;
+    will-change: transform, filter;
+    backface-visibility: hidden;
+    background: var(--front) center no-repeat;
+    background-size: cover;
+    border-radius: 5%
+  }
+  .card.human{
+    background-position: top;
+  }
+  .card.dwarf{
+    background-position: 70% 50%;
+  }
+  .card.halfing{
+    background-position: 50% 100%;
+  }
+
+  .description{
+    position: absolute;
+    background: url("/assets/images/parchment.jpg") center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    height: 20%;
+    border-top: 3.5px solid #dca;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 0 0 5% 5%;
+  }
+  
+  .title{
+    text-align: center;
+    color: #000;
+    font-size: 18px;
+  }
+  
+  .content{
+    font-weight: 500;
+    font-size: 14px;
+    text-align: center;
+    color: #000;
+    text-indent: 4px;
+    padding-left: 2px;
+    padding-top: 2px;
+  }
+
+  .card.elf {
+    --color1: var(--elf1);
+    --color2: var(--elf2);
+    --front: var(--elffront);
+  }
+  .card.dwarf {
+    --color1: var(--dwarf1);
+    --color2: var(--dwarf2);
+    --front: var(--dwarffront);
+  }
+  .card.halfing {
+    --color1: var(--halfing1);
+    --color2: var(--halfing2);
+    --front: var(--halfingfront);
+  }
+  .card.human {
+    --color1: #ec9bb6;
+    --color2: #ccac6f;
+    --color3: #69e4a5;
+    --color4: #8ec5d6;
+    --color5: #b98cce;
+    --front: var(--humanfront);
+  }
+  .card.dragonborn {
+    --front: var(--dragonbornfront);
+  }
+  .card.tiefling {
+    --front: var(--tieflingfront);
+  }
+  .card:before, .card:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    mix-blend-mode: color-dodge;
+    transition: all 0.33s ease;
+  }
+  .card:before {
+    background-position: 50% 50%;
+    background-size: 300% 300%;
+    /* background-image: linear-gradient(115deg, transparent 0%, var(--color1) 25%, transparent 47%, transparent 53%, var(--color2) 75%, transparent 100%); */
+    opacity: 0.5;
+    filter: brightness(0.5) contrast(1);
+    z-index: 1;
+  }
+  .card.animated {
+    transition: none;
+    animation: holoCard 5s ease-in-out 0s 1;
+  }
+
+  @keyframes holoCard {
+    0%, 100% {
+      transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg);
+    }
+    10%, 15% {
+      transform: rotateZ(0deg) rotateX(6deg) rotateY(-20deg);
+    }
+    30%, 40% {
+      transform: rotateZ(0deg) rotateX(-8deg) rotateY(26deg);
+    }
+    55%, 64% {
+      transform: rotateZ(3deg) rotateX(12deg) rotateY(20deg);
+    }
+    78% {
+      transform: rotateZ(-3deg) rotateX(-12deg) rotateY(-27deg);
+    }
+  }
+  
+  @media screen and (max-width: 1300px) {
+    .card.animated {
+        transition: none;
+        animation: holoCard 5s ease 0s 1;
+    }
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card.dragonborn{
+        background-position: top;
+    }
+    .card.tiefling{
+        background-position: top;
+    }
+    .card {
+        min-width: 500px;
+        min-height: 600px;
+    } 
+    .title{
+        font-size: x-large;
+    }
+    .content{
+        font-size: large;
+    }
+  }
+  
+  
+  
